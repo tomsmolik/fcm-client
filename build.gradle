@@ -28,7 +28,7 @@ apply plugin: 'org.jmailen.kotlinter'
 apply plugin: 'org.ec4j.editorconfig'
 
 group = 'cz.smdev'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = 1.8
 
 compileKotlin {
