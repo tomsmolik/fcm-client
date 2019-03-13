@@ -30,9 +30,9 @@ Sends to multiple device
         client.send(
                 Message(
                      registrationIds = arrayListOf(
-                     "tokenId",
-                     "tokenId",
-                     "..."
+                         "tokenId",
+                         "tokenId",
+                         "..."
                      ),
                      data = mapOf(
                          "message" to "Hello word!"
