@@ -16,9 +16,9 @@ import cz.smdev.fcm.client.converter.ErrorResultDeserializer
 
 import org.slf4j.LoggerFactory
 
-object ClientFactory {
+object FcmClientFactory {
 
-    private val logger = LoggerFactory.getLogger(ClientFactory::class.java)
+    private val logger = LoggerFactory.getLogger(FcmClientFactory::class.java)
 
     private const val HEADER_AUTHORIZATION = "Authorization"
 
