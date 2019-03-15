@@ -1,4 +1,5 @@
 # Firebase Cloud Messaging (FCM) - API Client
+[![](https://jitpack.io/v/tomsmolik/fcm-client.svg?label=Release)](https://jitpack.io/#tomsmolik/fcm-client)
 
 API description is here: https://firebase.google.com/docs/cloud-messaging/http-server-ref
 
@@ -41,4 +42,34 @@ Sends to multiple device
                 )
         ).await()
     }
+```
+
+## Gradle dependencies:
+
+```gradle
+	allprojects {
+		repositories {
+			maven { url 'https://jitpack.io' }
+		}
+	}
+    
+	dependencies {
+	        implementation 'com.github.tomsmolik:fcm-client:v1.1'
+	}
+```
+## Maven dependencies:
+
+```maven
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+    
+	<dependency>
+	    <groupId>com.github.tomsmolik</groupId>
+	    <artifactId>fcm-client</artifactId>
+	    <version>v1.1</version>
+	</dependency>
 ```
