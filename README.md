@@ -54,7 +54,7 @@ Sends to multiple device
 	}
     
 	dependencies {
-	        implementation 'com.github.tomsmolik:fcm-client:v1.4'
+	        implementation 'com.github.tomsmolik:fcm-client:1.0.0'
 	}
 ```
 ## Maven dependencies:
@@ -70,6 +70,6 @@ Sends to multiple device
 	<dependency>
 	    <groupId>com.github.tomsmolik</groupId>
 	    <artifactId>fcm-client</artifactId>
-	    <version>v1.4</version>
+	    <version>1.0.0</version>
 	</dependency>
 ```
