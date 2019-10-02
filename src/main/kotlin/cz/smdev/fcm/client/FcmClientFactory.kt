@@ -5,15 +5,13 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterF
 import cz.smdev.fcm.client.converter.ErrorResultDeserializer
 import cz.smdev.fcm.client.dto.ErrorResult
 import cz.smdev.fcm.client.service.FcmService
+import mu.KLogging
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.slf4j.LoggerFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object FcmClientFactory {
-
-    private val logger = LoggerFactory.getLogger(FcmClientFactory::class.java)
+object FcmClientFactory : KLogging() {
 
     private const val HEADER_AUTHORIZATION = "Authorization"
 
@@ -30,7 +28,7 @@ object FcmClientFactory {
             }
             .addInterceptor(HttpLoggingInterceptor(
                 HttpLoggingInterceptor.Logger {
-                    logger.debug(it)
+                    logger.debug { it }
                 }
             ).apply {
                 level = HttpLoggingInterceptor.Level.BODY
