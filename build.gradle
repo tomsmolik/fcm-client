@@ -15,7 +15,6 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
         classpath("gradle.plugin.org.jmailen.gradle:kotlinter-gradle:1.15.1")
         classpath("gradle.plugin.org.ec4j.gradle:editorconfig-gradle-plugin:0.0.3")
-        classpath("com.github.jengelman.gradle.plugins:shadow:4.0.4")
     }
 }
 
@@ -23,7 +22,6 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'org.jmailen.kotlinter'
 apply plugin: 'org.ec4j.editorconfig'
-apply plugin: "com.github.johnrengelman.shadow"
 
 group = 'cz.smdev'
 version = '0.0.1'
@@ -61,20 +59,12 @@ dependencies {
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.1'
 }
 
-
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives sourcesJar
-    archives javadocJar
+jar {
+    from {
+        configurations.default.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
 }
 
 editorconfig {
