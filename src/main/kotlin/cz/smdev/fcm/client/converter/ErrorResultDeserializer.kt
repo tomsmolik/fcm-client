@@ -3,11 +3,8 @@ package cz.smdev.fcm.client.converter
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
-
-import java.lang.IllegalArgumentException
-import java.lang.reflect.Type
-
 import cz.smdev.fcm.client.dto.ErrorResult
+import java.lang.reflect.Type
 
 class ErrorResultDeserializer : JsonDeserializer<ErrorResult> {
 

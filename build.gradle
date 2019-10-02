@@ -15,6 +15,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
         classpath("gradle.plugin.org.jmailen.gradle:kotlinter-gradle:1.15.1")
         classpath("gradle.plugin.org.ec4j.gradle:editorconfig-gradle-plugin:0.0.3")
+        classpath("com.github.jengelman.gradle.plugins:shadow:4.0.4")
     }
 }
 
@@ -22,6 +23,7 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'org.jmailen.kotlinter'
 apply plugin: 'org.ec4j.editorconfig'
+apply plugin: "com.github.johnrengelman.shadow"
 
 group = 'cz.smdev'
 version = '0.0.1'
@@ -48,13 +50,13 @@ dependencies {
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    
+
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
 
     implementation("com.squareup.okhttp3:logging-interceptor:$okHttpVersion")
-    
+
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.1'
 }
 

@@ -1,20 +1,15 @@
 package cz.smdev.fcm.client
 
 import com.google.gson.GsonBuilder
-
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-
+import cz.smdev.fcm.client.converter.ErrorResultDeserializer
 import cz.smdev.fcm.client.dto.ErrorResult
 import cz.smdev.fcm.client.service.FcmService
-import cz.smdev.fcm.client.converter.ErrorResultDeserializer
-
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import org.slf4j.LoggerFactory
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 object FcmClientFactory {
 
